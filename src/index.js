@@ -1,6 +1,23 @@
+module.exports = function towelSort(matrix) {
+  res = [];
+  if (matrix === undefined || matrix.length == 0) {
+    return res;
+  }
 
-// You should implement your task here.
+  for (let i = 0; i < matrix.length; i++) {
+    let towel = matrix[i];
+    if (i % 2 == 0) {
+      for (let element of towel) {
+        res.push(element);
+      }
+    }
+    else {
+      for (let x = towel.length - 1; x > -1; x--) {
+        res.push(towel[x]);
+      }
+    }
+  }
 
-module.exports = function towelSort (matrix) {
-  return [];
+
+  return res;
 }
